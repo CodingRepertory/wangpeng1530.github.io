@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+### 存储自己的一些想法
 
-You can use the [editor on GitHub](https://github.com/CodingRepertory/wangpeng1530.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+客户端热更实现
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+    首先需要有版本信息确定当前版本需要更新什么东西，所以需要几个文件来存储需要更新的内容
 
-### Markdown
+    1、首先需要一个基础db文件来存储基础版本的所有数据，以此为基准来获取有哪些文件变更。
+    2、需要一个版本db文件来确定哪些文件需要被下载。
+    3、需要一个version文件来控制是否有新的版本db文件需要下载
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CodingRepertory/wangpeng1530.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    接下来走热更流程
+        首先，玩家启动游戏后，会请求一个web地址，获取到version文件后，对比本地的version文件中的version信息，当本地版本号低于服务器请求到的version版本信息后，此时需要请求服务器获取版本db文件。
