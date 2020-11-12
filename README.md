@@ -15,7 +15,7 @@
 
 ## Python相关
 
-    Python和lua类似，变量不需要声明具体的类型
+    ①Python和lua类似，变量不需要声明具体的类型
     ②python注释#开头，当语句以:结尾时，缩进语句视为代码块,缩进4空格，(自己设置tab空格替换)大小写敏感
     ③python中pass语句为空语句，什么都不做，占位
 
@@ -61,36 +61,36 @@
             常量
                 Python中多使用全大写变量名来表示常量
     3、字符串和编码
-            目前计算机编码格式统一使用Unicode，Unicode中存储了所有字符的编码，但是因为要兼容所有的编码格式，所以编码需要多个字节来存储（英语本来一个字节就可以，为了兼容其他字符，所以需要多个字节），这样存储和传输成本就上升了，所以，后推出了UTF-8编码格式，会自己适配编码成多个字节。。而且UTF-8还可以兼容之前的ASCII码.
+        目前计算机编码格式统一使用Unicode，Unicode中存储了所有字符的编码，但是因为要兼容所有的编码格式，所以编码需要多个字节来存储（英语本来一个字节就可以，为了兼容其他字符，所以需要多个字节），这样存储和传输成本就上升了，所以，后推出了UTF-8编码格式，会自己适配编码成多个字节。。而且UTF-8还可以兼容之前的ASCII码.
                   
 
             Python提供了ord()来获取字符的编码，chr()可以将编码转为字符
     4、使用list和tuple
          list=[pa1,pa2,pa3,...]
 
-            Python内置数据类型 List
-            List是一种有序的集合, len()可以获取list元素个数。，list索引从0开始。
-            当索引超出了范围时，Python会报一个IndexError错误，所以，要确保索引不能越界， 最后一个元素的索引是len(classmates) - 1。
-            要取最后一个元素，除了计算索引位置外，还可以用-1做索引，直接获取最后一个元素，以此类推，-2，-3...
+         Python内置数据类型 List
+         List是一种有序的集合, len()可以获取list元素个数。，list索引从0开始。
+         当索引超出了范围时，Python会报一个IndexError错误，所以，要确保索引不能越界， 最后一个元素的索引是len(classmates) - 1。
+         要取最后一个元素，除了计算索引位置外，还可以用-1做索引，直接获取最后一个元素，以此类推，-2，-3...
 
-    len(List) 取list长度
-    List.append('Adam')  追加元素    List.insert(1, 'Jack') 插入元素    List.pop(Index) 删除元素,Index元素位置 ,为空删除末尾。
+        len(List) 取list长度
+        List.append('Adam')  追加元素    List.insert(1, 'Jack') 插入元素    List.pop(Index) 删除元素,Index元素位置 ,为空删除末尾。
 
-            跟lua一样可以，可以直接通过键值获取列表数值，然后重新赋值。
-            List里面的元素也可以是一个List，和lua很相似。
-            list数据结构类似于Lua中的表。
-    extend方法，使用一个list去扩充另一个list
-            
-    Tuple 定义
-    t=("1","2","3")
-    Tuple一旦初始化就不能更改，获取元素的方法类似于list
-            t = (1)
-            定义的不是tuple，是1这个数！这是因为括号()既可以表示tuple，又可以表示数学公式中的小括号，这就产生了歧义，因此，Python规定，这种情况下，按小括号进行计算，计算结果自然是1。
-    所以，只有1个元素的tuple定义时必须加一个逗号,，来消除歧义：
+                跟lua一样可以，可以直接通过键值获取列表数值，然后重新赋值。
+                List里面的元素也可以是一个List，和lua很相似。
+                list数据结构类似于Lua中的表。
+        extend方法，使用一个list去扩充另一个list
+                
+        Tuple 定义
+        t=("1","2","3")
+        Tuple一旦初始化就不能更改，获取元素的方法类似于list
+                t = (1)
+                定义的不是tuple，是1这个数！这是因为括号()既可以表示tuple，又可以表示数学公式中的小括号，这就产生了歧义，因此，Python规定，这种情况下，按小括号进行计算，计算结果自然是1。
+        所以，只有1个元素的tuple定义时必须加一个逗号,，来消除歧义：
     5、条件判断
              
-    if elif else
-     非零数值、非空字符串、非空list等，就判断为True，否则为False
+        if elif else
+         非零数值、非空字符串、非空list等，就判断为True，否则为False
     6、循环
         for x in ...     迭代list或者tuple
            while 循环
@@ -98,9 +98,9 @@
             continue
 
     7、使用dict和set
-    Dict {}
-    Set ()
-    List []
+        Dict {}
+        Set ()
+        List []
          dict(也叫map)
              要避免key不存在的错误，有两种办法：
         一是通过in判断key是否存在：
@@ -115,12 +115,12 @@
         查找和插入的时间随着元素的增加而增加；
         占用空间小，浪费内存很少。
         
-             dict的key必须是不可变对象。
+        dict的key必须是不可变对象。
 
-    Set  本身不存储Value，只存储了Key，本身需要list对象进行初始化，set是数学意义上的无序和无重复元素的集合，因此两个set可以进行数学上的集合运算，交并之类的操作。
+        Set  本身不存储Value，只存储了Key，本身需要list对象进行初始化，set是数学意义上的无序和无重复元素的集合，因此两个set可以进行数学上的集合运算，交并之类的操作。
 
 
-    set和dict的唯一区别仅在于没有存储对应的value
+        set和dict的唯一区别仅在于没有存储对应的value
 
     8、调用函数
         函数名其实就是指向一个函数对象的引用，完全可以把函数名赋给一个变量，相当于给这个函数起了一个“别名”：
@@ -205,8 +205,8 @@
         
         **操作符，传入dict的拷贝
         
-    递归函数 
-    尾调用，尾递归是指，在函数返回的时候，调用自身本身，并且，return语句不能包含表达式。这样，编译器或者解释器就可以把尾递归做优化，使递归本身无论调用多少次，都只占用一个栈帧，不会出现栈溢出的情况。
+        递归函数 
+        尾调用，尾递归是指，在函数返回的时候，调用自身本身，并且，return语句不能包含表达式。这样，编译器或者解释器就可以把尾递归做优化，使递归本身无论调用多少次，都只占用一个栈帧，不会出现栈溢出的情况。
 
     11、Python切片方法
         Python提供了切片（Slice）操作符
@@ -222,13 +222,39 @@
         只要是可迭代对象，都可以进行迭代。是否是可迭代对象通过collections模块的Iterable类型判断：
         
         >>> from collections import Iterable
-    >>> isinstance('abc', Iterable) # str是否可迭代
-    True
-    >>> isinstance([1,2,3], Iterable) # list是否可迭代
-    True
-    >>> isinstance(123, Iterable) # 整数是否可迭代
-    False
+        >>> isinstance('abc', Iterable) # str是否可迭代
+        True
+        >>> isinstance([1,2,3], Iterable) # list是否可迭代
+        True
+        >>> isinstance(123, Iterable) # 整数是否可迭代
+        False
+
+        isinstance(data,type)这个函数可以判断变量的类型
 
         
         for in循环
         默认情况下，dict迭代的是key。如果要迭代value，可以用for value in d.values()，如果要同时迭代key和value，可以用for k, v in d.items()。
+
+        如果要对list实现类似Java那样的下标循环怎么办？Python内置的enumerate函数可以把一个list变成索引-元素对，这样就可以在for循环中同时迭代索引和元素本身：
+
+        >>> for i, value in enumerate(['A', 'B', 'C']):
+        ...     print(i, value)
+        ...
+        0 A
+        1 B
+        2 C
+
+    13、列表生成式
+        写列表生成式时，把要生成的元素x * x放到前面，后面跟for循环，就可以把list创建出来，十分有用。
+        >>> [x * x for x in range(1, 11)]
+        >>> [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+        for循环后面还可以加上if判断，这样我们就可以筛选出仅偶数的平方：
+        >>> [x * x for x in range(1, 11) if x % 2 == 0]
+        [4, 16, 36, 64, 100]
+
+        还可以使用两层循环，可以生成全排列：
+        >>> [m + n for m in 'ABC' for n in 'XYZ']
+        ['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
+
+        在一个列表生成式中，for前面的if ... else是表达式，而for后面的if是过滤条件，不能带else。
