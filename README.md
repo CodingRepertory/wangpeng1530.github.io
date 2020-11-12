@@ -258,3 +258,24 @@
         ['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
 
         在一个列表生成式中，for前面的if ... else是表达式，而for后面的if是过滤条件，不能带else。
+    14、生成器
+        如果列表元素可以按照某种算法推算出来，这样就不必创建完整的list，从而节省大量的空间。
+        在Python中，这种一边循环一边计算的机制，称为生成器：generator。
+        >>> L = [x * x for x in range(10)]
+        >>> L
+        [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+        >>> g = (x * x for x in range(10))
+        >>> g
+        <generator object <genexpr> at 0x1022ef630>
+        创建L和g的区别仅在于最外层的[]和()，L是一个list，而g是一个generator。
+        
+        from collections.abc import Iterable
+
+        g = (x * x for x in range(10))
+        print(type(g),isinstance(g,Iterable))
+
+        <class 'generator'> True
+
+        generator是可遍历的变量，也可以通过next(g)来获取下一个元素，直到没有元素后，抛出StopIteration错误。
+    15、list、dict、str虽然是Iterable(可迭代对象)，却不是Iterator(迭代器)。
+        把list、dict、str等Iterable(可迭代对象)变成Iterator(迭代器)可以使用iter()函数
