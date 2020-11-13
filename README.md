@@ -279,6 +279,51 @@
         generator是可遍历的变量，也可以通过next(g)来获取下一个元素，直到没有元素后，抛出StopIteration错误。
     15、list、dict、str虽然是Iterable(可迭代对象)，却不是Iterator(迭代器)。
         把list、dict、str等Iterable(可迭代对象)变成Iterator(迭代器)可以使用iter()函数
+    16、面向对象编程
+        Python类关键字Class，拥有成员变量，默认构造函数__init__
+        def __init__(self,args)
+        Python和lua类似，可以直接点语法给对象添加成员变量，或者修改成员变量的值
+        但如果给成员变量头部加上__就表明这个变量本身为私有变量，只能通过提供的接口进行修改和访问。
+
+        >>> bart = Student('Bart Simpson', 59)
+        >>> bart.get_name()
+        'Bart Simpson'
+        >>> bart.__name = 'New Name' # 设置__name变量！
+        >>> bart.__name
+        'New Name'
+
+        这样看貌似是修改成功了，但是其实是给bart添加了一个__name变量，本身的__name变量已经被存储为了_XXX__name__。
+
+        如果要获得一个对象的所有属性和方法，可以使用dir()函数，它返回一个包含字符串的list
+
+        类似__xxx__的属性和方法在Python中都是有特殊用途的，比如__len__方法返回长度。在Python中，如果你调用len()函数试图获取一个对象的长度，实际上，在len()函数内部，它自动去调用该对象的__len__()方法，所以，下面的代码是等价的：
+
+        >>> len('ABC')
+        3
+        >>> 'ABC'.__len__()
+        3
+
+        getattr()、setattr()以及hasattr()三个方法可以对对象进行修改
+
+        getattr(obj,key) 
+        
+        ###类成员变量
+        >>> class Student(object):
+        ... name = 'Student'
+        ...
+        >>> s = Student() # 创建实例s
+        >>> print(s.name) # 打印name属性，因为实例并没有name属性，所以会继续查找class的name属性
+        Student
+        >>> print(Student.name) # 打印类的name属性
+        Student
+        >>> s.name = 'Michael' # 给实例绑定name属性
+        >>> print(s.name) # 由于实例属性优先级比类属性高，因此，它会屏蔽掉类的name属性
+        Michael
+        >>> print(Student.name) # 但是类属性并未消失，用Student.name仍然可以访问
+        Student
+        >>> del s.name # 如果删除实例的name属性
+        >>> print(s.name) # 再次调用s.name，由于实例的name属性没有找到，类的name属性就显示出来了
+        Student
 
     ##正则表达式
     一直没有彻底掌握正则表达式，通过这次，必须熟练掌握。
